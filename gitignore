@@ -1,12 +1,33 @@
-### Django ###
+# Logs
 *.log
+
+# Django translations
 *.pot
+
+# Python cache
 *.pyc
 __pycache__/
+
+# Local settings
 local_settings.py
+
+# Database
 db.sqlite3
 db.sqlite3-journal
-/media
-/static
-venv
-.vscode
+
+# Media & Static (user uploads, collected static files)
+media/
+static/
+staticfiles/
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# VSCode
+.vscode/
+
+# Migrations except __init__.py
+**/migrations/
+!**/migrations/__init__.py
