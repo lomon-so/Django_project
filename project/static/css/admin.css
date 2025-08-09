@@ -1,0 +1,57 @@
+#header {
+    background: #10284e;
+    color: #fff;
+    margin-bottom: -20px;
+}
+
+div.breadcrumbs {
+    background: #30caa0;
+    color: #10284e;
+}
+
+div.breadcrumbs a {
+    color: #333;
+}
+
+a:link,
+a:visited {
+    color: #10284e;
+}
+
+.module h2,
+.module caption,
+.inline-group h2 {
+    background: #30caa0;
+}
+
+#nav-sidebar .current-app .section:link,
+#nav-sidebar .current-app .section:visited {
+    color: #fff;
+}
+
+#id_permissions_to_title {
+    background: #30caa0;
+    color: #fff;
+}
+
+.button,
+input[type=submit],
+input[type=button],
+.submit-row input,
+a.button {
+    background: #30caa0;
+    color: #fff;
+}
+
+.button.default,
+input[type=submit].default,
+.submit-row input.default {
+    background: #30caa0;
+    color: #fff;
+}
+
+.object-tools a:link,
+.object-tools a:visited {
+    background: #30caa0;
+    color: #fff;
+}

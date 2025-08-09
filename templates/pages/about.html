@@ -1,0 +1,114 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %} | About Us {% endblock  %}
+{% block content %}
+<section id="showcase-inner" class="py-5 text-white">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-12">
+        <h1 class="display-4">About BT Real Estate</h1>
+        <p class="lead">
+          At BT Real Estate, we connect people with the perfect property whether it’s a  
+          dream home, a profitable investment, or a place to start fresh.  
+          Our mission is simple: trusted service, expert guidance, and results you can count on.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Breadcrumb -->
+<section id="bc" class="mt-3">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{% url 'index' %}"> <i class="fas fa-home"></i> Home</a>
+        </li>
+        <li class="breadcrumb-item active">About</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- About BT -->
+<section id="about" class="py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h2>We Search For The Perfect Home</h2>
+        <p class="lead">
+          Your dream home is out there and we’re here to help you find it.
+          With local expertise and a commitment to excellence, we make your property journey simple and stress-free.
+        </p>
+        <img src="{% static 'img/about.jpg' %}" alt="about" />
+        <p class="mt-4">
+          At BT Real Estate, we believe buying or selling property should be exciting, not overwhelming.  
+          Our team works closely with you to understand your needs, guide you through the process,  
+          and deliver results you can trust. From market insights to tailored recommendations,  
+          we’re with you every step of the way because finding the perfect place to call home  
+          is more than just a transaction, it’s a milestone.
+        </p>
+      </div>
+      <div class="col-md-4">
+        {% if mvp_realtors %} 
+        {% for realtor in mvp_realtors %} 
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="{{ realtor.photo.url}}"
+            alt="Seller of the month"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Seller Of The Month</h5>
+            <h6 class="text-secondary">{{ realtor.name }}</h6>
+            <p class="card-text">{{ realtor.descriptio }}</p>
+          </div>
+        </div>
+        {% endfor %} 
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Work -->
+<section id="work" class="bg-dark text-white text-center">
+  <h2 class="display-4">We Work For You</h2>
+  <h4>
+    From your first search to closing the deal, we’re committed to making your property journey seamless, stress free, and successful.
+  </h4>
+  <hr />
+  <a href="listings.html" class="btn btn-secondary text-white btn-lg">
+    View Our Featured Listings
+  </a>
+</section>
+
+
+<!-- Team -->
+<section id="team" class="py-5">
+  <div class="container">
+    <h2 class="text-center">Our Team</h2>
+    <div class="row text-center">
+      {% if realtors %} {% for realtor in realtors %}
+      <div class="col-md-4">
+        <img src="{{ realtor.photo.url }}" alt="" class="rounded-circle mb-3" />
+        <h4>{{ realtor.name }}</h4>
+        <p class="text-success">
+          <i class="fas fa-award text-success mb-3"></i> Realtor
+        </p>
+        <hr />
+        <p><i class="fas fa-phone"></i> {{ realtor.phone }}</p>
+        <p><i class="fas fa-envelope-open"></i> {{ realtor.email }}</p>
+      </div>
+      {% endfor %} {% else %}
+      <div class="col-md-12">
+        <p>No Realtors Avaliable Now</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}
